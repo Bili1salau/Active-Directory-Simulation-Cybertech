@@ -38,16 +38,28 @@ The simulated environment reflected a small IT services firm with distributed of
 
 4. Network Design
   Internet
-   						¦
+   						Â¦
        Router (Gateway: 10.0.2.1)
- 					     ¦
+ 					     Â¦
           Switch
  +----------------------------------------------+
- ¦                ¦                   ¦        
+ Â¦                Â¦                   Â¦        
 Server        PC1 (Win 8.1)        PC2 (Win 10 Pro)
 
 
-DeviceIP AddressRoleWindows Server10.0.2.4AD Domain Controller (DC)Windows 8.1DHCPClient (ABUJA OU - Finance)Windows 10DHCPClient (UK OU - IT)
+Device
+IP Address
+Role
+Windows Server
+10.0.2.4
+AD Domain Controller (DC)
+Windows 8.1
+DHCP
+Client (ABUJA OU - Finance)
+Windows 10
+DHCP
+Client (UK OU - IT)
+
 5. Domain Configuration
 ? Domain Name: Cybertech.local
 ? Server Name: CYBERTECH
@@ -60,12 +72,12 @@ DeviceIP AddressRoleWindows Server10.0.2.4AD Domain Controller (DC)Windows
 The directory structure was created as follows:
 CyberTech.local
             Organisational Unit: UK
-¦   +-- Group: IT
-¦   +-- Group: Sales
+Â¦   +-- Group: IT
+Â¦   +-- Group: Sales
 
              Organisational Unit: US
-¦   +-- Group: Procurements
-¦   +-- Group: Laboratory
+Â¦   +-- Group: Procurements
+Â¦   +-- Group: Laboratory
 
              Organisational Unit: Abuja
     +-- Group: Finance
@@ -73,34 +85,46 @@ CyberTech.local
 
 7. Users and Group Memberships
 Two test users were provisioned to demonstrate IAM principles:
-UsernameOUsGroup Membership      Assigned PolicyBill.IT@cybertech.localUK OUITRemove clock from system notification area.Biola.finance@cybertech.localABUJAFinanceUnable to shutdown
+Username
+OUs
+Group Membership
+      Assigned Policy
+Bill.IT@cybertech.local
+UK OU
+IT
+Remove clock from system notification area.
+Biola.finance@cybertech.local
+ABUJA
+Finance
+Unable to shutdown
+
 8. Group Policy (GPO) Implementation
 Two GPOs were created and linked to specific users through security filtering:
 1. GPO Name: Remove Calendar Display
-? Linked To: UK OU (IT User - Bill)
-? Policy:
-User Configuration ? Administrative Templates ? 
-? Result: Bill cannot view or enabled Clock and calendar on the assigned PC..
+Linked To: UK OU (IT User - Bill)
+Policy:
+User Configuration => Administrative Templates 
+Result: Bill cannot view or enabled Clock and calendar on the assigned PC..
 
 2. GPO Name: NoShutdown
-3. 
-? Linked To: ABUJA OU (Finance User - Biola)
-? Policy:
-Computer Configuration ? Administrative Templates ? Start Menu and Taskbar ? Remove and prevent access to the Shut Down, Restart, Sleep, and Hibernate commands
-? Result: Biola cannot shut down the assigned PC.
+3. Linked To: ABUJA OU (Finance User - Biola)
+Policy:
+Computer Configuration => Administrative=> Templates => Start Menu and Taskbar => Remove and prevent access to the Shut Down, Restart, Sleep, and Hibernate commands
+Result: Biola cannot shut down the assigned PC.
 
 9. Screenshots (Evidence)
-? OU and group structure in ADUC
-? GPO editor settings
-? User login results showing applied restrictions
+OU and group structure in ADUC
+GPO editor settings
+User login results showing applied restrictions
 
-(Screenshots stored in project evidence folder)
+[Screenshots stored in project evidence folder](https://github.com/Bili1salau/Active-Directory-Simulation-Cybertech/upload/main/Screenshots)
 
 10. Key Takeaways
-? Successfully implemented an IAM framework on Active Directory.
-? Mapped business structure (regions and departments) into OUs and groups.
-? Demonstrated access control enforcement using Group Policy Objects (GPOs).
-? Learned how to provision and manage users, groups, and security policies.
-? Applied identity governance principles in a real-world simulated enterprise environment.
+Successfully implemented an IAM framework on Active Directory.
+Mapped business structure (regions and departments) into OUs and groups.
+Demonstrated access control enforcement using Group Policy Objects (GPOs).
+Learned how to provision and manage users, groups, and security policies.
+Applied identity governance principles in a real-world simulated enterprise environment.
+
 
 
